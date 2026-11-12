@@ -1,0 +1,14 @@
+# One-click game server on Render (render.com → New → Blueprint → pick this repo).
+# After it deploys, copy its URL (https://….onrender.com), change https → wss,
+# and paste it into public/offgrid-config.js on your Netlify site.
+services:
+  - type: web
+    name: offgrid-game-server
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev
+    startCommand: npm run server
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "20"

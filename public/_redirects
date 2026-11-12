@@ -1,0 +1,2 @@
+# Short invite links: /versus/ABCDE  →  the static room page
+/versus/:code   /versus/room/?code=:code   302
